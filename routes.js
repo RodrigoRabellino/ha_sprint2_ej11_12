@@ -26,9 +26,10 @@ router.get("/fruits", (req, res) => {
   });
 });
 router.post("/fruits", addFruit, (req, res) => {
-  res.render("fruits", {
-    fruitsList: fruitsList,
-  });
+  res.redirect("/fruits");
+  // res.render("fruits", {
+  //   fruitsList: fruitsList,
+  // });
 });
 
 router.get("/about", (req, res) => {

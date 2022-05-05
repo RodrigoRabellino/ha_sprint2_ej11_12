@@ -1,8 +1,8 @@
 const { fruitsList } = require("../src/backScripts");
 
 const addFruit = (req, res, next) => {
-  console.log(req.body);
   let fruitName = req.body.form__fruit__name;
+  
   if (!existsFruit(fruitName)) {
     console.log(fruitsList);
     fruitsList.push(fruitName);
