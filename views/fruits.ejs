@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <title>Fruit</title>
+  </head>
+  <body>
+    <%- include("partials/navBar") %>
+    <section class="my-section-fruits">
+      <div class="my-div-card-container">
+        <ul class="my-list-products">
+          <% for (const fruit of fruitsList) { %>
+          <li><%= fruit %></li>
+          <% } %>
+        </ul>
+      </div>
+      <div class="my-div-card-container">
+        <form  method="POST" >
+          <div class="mb-3">
+            <label for="form__fruit__name" class="form-label"> Ingrese una Fruta </label>
+            <input
+              type="text"
+              class="form-control text-center"
+              name="form__fruit__name"
+              id="form__fruit__name"
+              placeholder="Apple"
+              required
+            />
+            <input
+                  id="btn__add__fruit"
+                  type="submit"
+                  class="btn btn-success m-1"
+                  value="Add"
+                />
+        </form>
+      </div>
+    </section>
+    <%- include("partials/footer") %> <%- include("partials/scripts") %>
+  </body>
+</html>
